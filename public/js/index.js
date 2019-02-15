@@ -2,10 +2,7 @@ var socket = io();
 socket.on('connect', function () {
     console.log("connected to server")
 
-    socket.emit('createMessage', {
-        from: 'fuad',
-        text: 'where are you'
-    })
+    
     socket.on('newMessage', (message) => {
         console.log("New message ", message)
     })
