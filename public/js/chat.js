@@ -10,6 +10,16 @@ socket.on('connect', function () {
         }
     })
 })
+
+socket.on('updateUserList', (users) => {
+    var ol = jQuery('<ol></ol>');
+    users.forEach(user => {
+        ol.append(jQuery('<li></li>').text(user))
+    });
+    jQuery('#users').html(ol)
+
+})
+
 function scrolltoBottom() {
     // Selectors
     var messages = jQuery('#messages');
